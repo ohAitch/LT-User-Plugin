@@ -1,0 +1,59 @@
+;; User keymap
+;; -----------------------------
+;; Keymaps are stored as a set of diffs that are merged together together
+;; to create the final set of keys. You can modify these diffs to either add
+;; or subtract bindings.
+;;
+;; Like behaviors, keys are bound by tag. When objects with those tags are active
+;; the key bindings are live. Keys can be bound to any number of Light Table commands,
+;; allowing you the flexibility to execute multiple operations together. To see a list
+;; of all the commands you can execute, start typing a word related to the thing you
+;; want to do in between the square brackets (e.g. type "editor").
+
+{:+ {:app {"ctrl-right" [:tabset.next]
+           "ctrl-left" [:tabset.prev]
+           "alt-cmd-right" [:tabs.next]
+           "alt-cmd-left" [:tabs.prev]
+           "ctrl-shift-right" [:tabs.move-next-tabset]
+           "ctrl-shift-left" [:tabs.move-prev-tabset]
+           
+           "ctrl-]" [:tabset.next]
+           "ctrl-[" [:tabset.prev]
+           "ctrl--" [:tabset.close]
+           "ctrl-shift-=" [:tabs.move-new-tabset]
+           "ctrl-shift-]" [:tabs.move-next-tabset]
+           "ctrl-shift-[" [:tabs.move-prev-tabset]
+           "ctrl-cmd-f" [:window.fullscreen]}
+
+     :editor {"alt-down" [(:emacs.keymap-cmd "Ctrl-Down")]  ;  next paragraph
+              "alt-up" [(:emacs.keymap-cmd "Ctrl-Up")]  ;  next paragraph
+              "alt-enter" [:editor.toggle-overwrite]
+              ;"alt-shift-down" [(:emacs.keymap-cmd "Ctrl-Shift-Down")]  ;  press and release shift for paragraph selection (??)
+              ;"alt-shift-up" [(:emacs.keymap-cmd "Ctrl-Shift-Up")]
+              
+              "ctrl-shift-up" [:lt.plugins.lt-scrubber/increment-value]
+              "ctrl-shift-down" [:lt.plugins.lt-scrubber/decrement-value]
+              "alt-w" [:editor.watch.watch-selection]
+              "alt-shift-w" [:editor.watch.unwatch]
+              
+              "ctrl-cmd-=" [:editor.fold-code :editor.line-down]
+              "cmd-;" [:toggle-comment-selection]
+              "cmd-shift-d" [:editor.delete-line]
+              "cmd-shift-j" [:editor.sublime.joinLines]
+              "cmd-d" [:editor.sublime.selectNextOccurrence]
+;;              "cmd-b" [(:vim.keymap-cmd "#")]
+              "alt-shift-up" [:editor.sublime.selectLinesUpward]
+              "alt-shift-down" [:editor.sublime.selectLinesDownward]
+              "alt-cmd-s" [:editor.sublime.splitSelectionByLine]
+              "cmd-j" [:lt.plugins.reflow/reflow]}
+;;     :editor.hoon {"alt-cmd-f" [(:find.fill-selection "++  ") :find.show]}  ;  poor man's defintion-at-cursor
+     :editor.styl {"cmd-s" [:save :refresh-connected-browser]}
+     :editor.jade {"cmd-s" [:save :refresh-connected-browser]}
+     :editor.behaviors {"tab" [:auto-complete]}
+     :editor.keymap {"tab" [:auto-complete]}}
+ :- {:editor.keys.normal 
+         {"\"" [(:editor.repeat-pair "\"")]
+          "tab" [:auto-complete]
+          "cmd-d" [:editor.delete-line]}
+     }
+ }

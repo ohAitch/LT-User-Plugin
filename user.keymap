@@ -1,0 +1,57 @@
+;; Your file has been converted to the new flat format.
+;; Conversion does not preserve comments or indentation.
+;; File is backed up at /Users/pittyp/Library/Application Support/LightTable/User/user.keymap.bak
+[
+  [:app "ctrl-left" :tabset.prev] 
+  [:app "ctrl-right" :tabset.next]
+  [:app "alt-cmd-left" :tabs.prev] 
+  [:app "alt-cmd-right" :tabs.next]
+  [:app "ctrl-shift-left" :tabs.move-prev-tabset] 
+  [:app "ctrl-shift-right" :tabs.move-next-tabset]
+  
+  [:app "ctrl-[" :tabset.prev]
+  [:app "ctrl-]" :tabset.next]
+  [:app "ctrl-shift-[" :tabs.move-prev-tabset]
+  [:app "ctrl-shift-]" :tabs.move-next-tabset]
+  [:app "ctrl--" :tabset.close]
+  [:app "ctrl-shift-" :tabset.wipe]
+  [:app "ctrl-shift-=" :tabs.move-new-tabset] ;; ctrl-+
+ 
+  [:app "ctrl-cmd-f" :window.fullscreen]
+ 
+ 
+  [:editor "alt-down" (:emacs.keymap-cmd "Ctrl-Down")]
+  [:editor "alt-up" (:emacs.keymap-cmd "Ctrl-Up")]
+  [:editor "alt-enter" :editor.toggle-overwrite]
+ 
+  [:editor "ctrl-shift-up" :lt.plugins.lt-scrubber/increment-value]
+  [:editor "ctrl-shift-down" :lt.plugins.lt-scrubber/decrement-value]
+  [:editor "alt-w" :editor.watch.watch-selection]
+  [:editor "alt-shift-w" :editor.watch.unwatch]
+ 
+  [:editor "ctrl-cmd-=" :editor.fold-code :editor.line-down]
+  [:editor "cmd-;" :toggle-comment-selection]
+;;   [:editor "cmd-." :editor.jump-to-matching-parenthesis]
+  [:editor "cmd-shift-d" :editor.delete-line]
+  [:editor "cmd-shift-j" :editor.sublime.joinLines]
+  [:editor "cmd-shift-c" :opener.open-linked-doc :tabs.move-next-tabset]
+ 
+  [:editor "alt-shift-up" :editor.sublime.selectLinesUpward]
+  [:editor "alt-shift-down" :editor.sublime.selectLinesDownward]
+  [:editor "cmd-d" :editor.sublime.selectNextOccurrence]
+  [:editor "alt-cmd-s" :editor.sublime.splitSelectionByLine]
+  [:editor "cmd-j" :lt.plugins.reflow/reflow]
+  
+  [:editor.styl "cmd-s" :save :refresh-connected-browser]
+  [:editor.jade "cmd-s" :save :refresh-connected-browser]
+
+ 
+  [:editor.keys.normal "-\"" (:editor.repeat-pair "\"")]
+  [:editor.keys.normal "-cmd-d" :editor.delete-line]
+  [:editor.keys.normal "-tab" :auto-complete]
+ 
+  [:editor.behaviors "tab" :auto-complete]
+  [:editor.keymap "tab" :auto-complete]
+  [:editor.cljs "tab" :auto-complete]
+
+]

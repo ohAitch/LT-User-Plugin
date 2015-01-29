@@ -1,0 +1,47 @@
+;; User behaviors
+;; -----------------------------
+;; Behaviors are stored as a set of diffs that are merged together
+;; to create the final set of functionality that makes up Light Table. You can
+;; modify these diffs to either add or subtract functionality.
+;;
+;; Behaviors are added to tags, objects with those tags then automatically gain
+;; whatever logic the behavior imparts. To see a list of user-level behaviors,
+;; start typing a word related to the functionality you want in between the square
+;; brackets (e.g. "theme").
+
+{:+ {
+     ;; The app tag is kind of like global scope. You assign behaviors that affect
+     ;; all of Light Table here
+     :app [(:lt.objs.style/set-skin "dark")
+             (:lt.objs.style/font-settings "Inconsolata" "9.6" "")
+;             (:lt.objs.style/font-settings "Source Code Pro" "8.6" "1.2")
+           ]
+
+     ;; The editor tag is applied to all editors
+     :editor [ :lt.objs.editor/no-wrap
+               :lt.objs.editor/line-numbers 
+               (:lt.plugins.reflow/set-width 80)
+               ;;:lt.plugins.vim/activate-vim
+               ;;:lt.objs.editor/fold-gutter
+              ;;(:lt.obj s.style/set-theme "the-matrix")
+              ]
+     ;; Here we can add behaviors to just clojure editors
+     :editor.markdown [(:lt.objs.editor/tab-settings false 4 4)]
+     :editor.clojure [(:lt.objs.langs.clj/print-length 1000)]
+     :editor.styl [:lt.plugins.palette/enable]}
+     :editor.behaviors [:lt.plugins.auto-complete/auto-show-on-input]
+     :editor.keymap [:lt.plugins.auto-complete/auto-show-on-input]
+     
+     :wut-tag-thing [(:reverb.lighttable/do-the-wut "hi")]
+     :files [(:lt.objs.files/file-types 
+               {:name "Hoon" :exts [:hoon :hook] :mime "text/x-hoon" :tags [:editor.hoon]}
+)]
+ ;; You can use the subtract key to remove behavior that may get added by
+ ;; another diff
+ :- {
+     :editor [
+              :lt.objs.editor.file/remove-trailing-whitespace
+              :lt.plugins.auto-complete/auto-show-on-input
+              
+              ]
+     }}

@@ -1,0 +1,33 @@
+;; Your file has been converted to the new flat format.
+;; Conversion does not preserve comments or indentation.
+;; File is backed up at /Users/pittyp/Library/Application Support/LightTable/User/user.behaviors.bak
+[
+ [:app :lt.objs.style/set-skin "dark"]
+ [:app :lt.objs.style/font-settings "Inconsolata" "9.6"]
+ [:app :lt.objs.plugins/load-css "user.css"]
+ [:app :lt.objs.plugins/load-js "user_compiled.js"]
+;;  [:app :lt.objs.settings/pair-keymap-diffs]
+
+ [:editor :lt.objs.editor/no-wrap]
+ [:editor :lt.objs.editor/line-numbers]
+ [:editor :lt.plugins.reflow/set-width 80]
+;;  [:editor :lt.plugins.vim/activate-vim]
+;;  [:editor :lt.objs.editor/fold-gutter]
+
+;;  [:editor :lt.plugins.trail-whitespace/show-trailing-whitespace]
+ [:editor :-lt.objs.editor.file/remove-trailing-whitespace]
+ [:editor :-lt.plugins.auto-complete/auto-show-on-input]
+
+
+ [:editor.markdown :lt.objs.editor/tab-settings false 4 4]
+ [:editor.clojure :lt.objs.langs.clj/print-length 1000]
+ [:editor.styl :lt.plugins.palette/enable]
+ [:editor.behaviors :lt.plugins.auto-complete/auto-show-on-input]
+ [:editor.keymap :lt.plugins.auto-complete/auto-show-on-input]
+ [:editor.cljs :lt.plugins.auto-complete/auto-show-on-input]
+
+ [:files :lt.objs.files/file-types [
+   {:name "Hoon" :exts [:hoon :hook] :tags [:editor.hoon] :mime "text/x-hoon"}
+   {:name "Fish" :exts [:fish] :tags [:editor.shell] :mime "text/x-sh"}
+ ] ]
+]
