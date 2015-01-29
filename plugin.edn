@@ -1,6 +1,6 @@
 {:desc "TODO",
  :version "0.0.1",
- :source "TODO",
+ :source "https://github.com/ohAitch/LT-User-Plugin",
  :behaviors "user.behaviors",
  ;; Do not edit - :dependencies are auto-generated
 :dependencies {
@@ -8,10 +8,10 @@
  "Clojure" "0.1.1",
  "CoffeeScript" "0.0.4",
  "Emacs" "0.0.4",
- "Example" "0.0.1",
  "GBlame" "0.0.8",
  "Git Status Bar" "0.8.2",
  "HTML" "0.0.2",
+ "hoon" "0.0.1",
  "Jade" "0.0.1",
  "Javascript" "0.1.2",
  "Keymapper" "0.0.4",

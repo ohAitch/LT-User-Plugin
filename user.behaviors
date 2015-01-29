@@ -27,7 +27,7 @@
  [:editor.cljs :lt.plugins.auto-complete/auto-show-on-input]
 
  [:files :lt.objs.files/file-types [
-   {:name "Hoon" :exts [:hoon :hook] :tags [:editor.hoon] :mime "text/x-hoon"}
+;;    {:name "Hoon" :exts [:hoon :hook] :tags [:editor.hoon] :mime "text/x-hoon"}
    {:name "Fish" :exts [:fish] :tags [:editor.shell] :mime "text/x-sh"}
  ] ]
 ]
