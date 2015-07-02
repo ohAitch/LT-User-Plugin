@@ -7,9 +7,11 @@
  [:app :lt.objs.plugins/load-css "user.css"]
  [:app :lt.objs.plugins/load-js "user_compiled.js"]
 ;;  [:app :lt.objs.settings/pair-keymap-diffs]
+ [:document :lt.objs.document/set-linked-doc-options {:shared-history true}]
 
  [:editor :lt.objs.editor/no-wrap]
  [:editor :lt.objs.editor/line-numbers]
+;;  [:editor :lt.objs.editor/set-rulers]
  [:editor :lt.plugins.reflow/set-width 80]
 ;;  [:editor :lt.plugins.vim/activate-vim]
 ;;  [:editor :lt.objs.editor/fold-gutter]
@@ -29,5 +31,6 @@
  [:files :lt.objs.files/file-types [
 ;;    {:name "Hoon" :exts [:hoon :hook] :tags [:editor.hoon] :mime "text/x-hoon"}
    {:name "Fish" :exts [:fish] :tags [:editor.shell] :mime "text/x-sh"}
+;;   {:exts [:md :markdown] :mime "text/x-gfm" :tags [:editor.gfm :editor.markdown] :name "Markdown"}
  ] ]
 ]

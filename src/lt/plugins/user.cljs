@@ -27,17 +27,23 @@
 
 ;; Create a user command. Commands can call any function
 ;; and be bound to any keystroke.
-(cmd/command {:command :user.say-hello
-              :desc "User: Say Hello"
-              :exec (fn []
-                      (tabs/add-or-focus! hello))})
+;; (cmd/command {:command :user.say-hello
+;;               :desc "User: Say Hello"
+;;               :exec (fn []
+;;                       (tabs/add-or-focus! hello))})
 
 (cmd/command {:command :tabset.wipe
               :desc "Tabset: Wipe tabs from tabset"
-              :exec (fn [t]
+              :exec (fn []
                       (let [ts (ctx/->obj :tabset)]
                           (doseq [obj (:objs @ts)]
                             (object/raise obj :close))))})
 
-;;  Hackathon things: hoon js, directory names, spaced filename css inject, de-inject css
-;;  open view/markdown in next tabset, view not clobbering undo, folding, capitalize
+;;  Hack night things:
+;;  -  increase delay for considering file deleted
+;;  -  directory names: tabs.cljs: ->path, change ->name or dom stuff
+;;  -  de-inject css
+;;  -  check atom shell performance
+;;  -  folding, open view/markdown in next tabset
+;;  -  capitalize: hook codemirror
+;;  -  cmd-d select with '-'

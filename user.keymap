@@ -24,21 +24,26 @@
   [:editor "alt-up" (:emacs.keymap-cmd "Ctrl-Up")]
   [:editor "alt-enter" :editor.toggle-overwrite]
  
-  [:editor "ctrl-shift-up" :lt.plugins.lt-scrubber/increment-value]
-  [:editor "ctrl-shift-down" :lt.plugins.lt-scrubber/decrement-value]
+;;   [:editor "cmd-up" Scroll
+  [:editor "ctrl-up" :lt.plugins.lt-scrubber/increment-value]
+  [:editor "ctrl-down" :lt.plugins.lt-scrubber/decrement-value]
   [:editor "alt-w" :editor.watch.watch-selection]
   [:editor "alt-shift-w" :editor.watch.unwatch]
  
   [:editor "ctrl-cmd-=" :editor.fold-code :editor.line-down]
   [:editor "cmd-;" :toggle-comment-selection]
 ;;   [:editor "cmd-." :editor.jump-to-matching-parenthesis]
-  [:editor "cmd-shift-d" :editor.delete-line]
+  [:editor "cmd-t" :opener.open-linked-doc :tabs.move-next-tabset]
+;;  [:editor "cmd-shift-d" :editor.delete-line]
   [:editor "cmd-shift-j" :editor.sublime.joinLines]
-  [:editor "cmd-shift-c" :opener.open-linked-doc :tabs.move-next-tabset]
  
   [:editor "alt-shift-up" :editor.sublime.selectLinesUpward]
   [:editor "alt-shift-down" :editor.sublime.selectLinesDownward]
   [:editor "cmd-d" :editor.sublime.selectNextOccurrence]
+  [:editor "ctrl-d" :editor.delete-line]
+  [:editor "ctrl-shift-d" :editor.sublime.duplicateLine]
+  [:editor "cmd-m" :editor.sublime.goToBracket]
+  [:editor "shift-cmd-m" :editor.sublime.selectBetweenBrackets]
   [:editor "alt-cmd-s" :editor.sublime.splitSelectionByLine]
   [:editor "cmd-j" :lt.plugins.reflow/reflow]
   
@@ -49,9 +54,10 @@
   [:editor.keys.normal "-\"" (:editor.repeat-pair "\"")]
   [:editor.keys.normal "-cmd-d" :editor.delete-line]
   [:editor.keys.normal "-tab" :auto-complete]
+  [:editor.keys.normal "ctrl-enter" :auto-complete]
  
-  [:editor.behaviors "tab" :auto-complete]
-  [:editor.keymap "tab" :auto-complete]
-  [:editor.cljs "tab" :auto-complete]
+;;   [:editor.behaviors "tab" :auto-complete]
+;;   [:editor.keymap "tab" :auto-complete]
+;;   [:editor.cljs "tab" :auto-complete]
 
 ]
