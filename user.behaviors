@@ -6,6 +6,7 @@
  [:app :lt.objs.style/font-settings "Inconsolata" "9.6"]
  [:app :lt.objs.plugins/load-css "user.css"]
  [:app :lt.objs.plugins/load-js "user_compiled.js"]
+ [:app :lt.plugins.spelling/set-dictionary-location "/Users/pittyp/Downloads/hundict"]
 ;;  [:app :lt.objs.settings/pair-keymap-diffs]
  [:document :lt.objs.document/set-linked-doc-options {:shared-history true}]
 
@@ -31,6 +32,7 @@
  [:files :lt.objs.files/file-types [
 ;;    {:name "Hoon" :exts [:hoon :hook] :tags [:editor.hoon] :mime "text/x-hoon"}
    {:name "Fish" :exts [:fish] :tags [:editor.shell] :mime "text/x-sh"}
+;;    {:name "Markdown" :exts [:mdy]  :tags [:editor.markdown] :mime "text/x-markdown"}
 ;;   {:exts [:md :markdown] :mime "text/x-gfm" :tags [:editor.gfm :editor.markdown] :name "Markdown"}
  ] ]
 ]
